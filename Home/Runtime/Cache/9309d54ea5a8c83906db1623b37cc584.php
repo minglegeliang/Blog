@@ -1,0 +1,108 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="baidu-site-verification" content="gMSvLHvnWi" />
+    <meta name="keywords" content="Toruneko,特鲁尼克,戴建豪,PHP,Java,设计模式,Windows Phone,C#" />
+    <meta name="description" content="戴建豪(Toruneko)的博客." />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/blog.css" />
+	<title>剑阁-Toruneko</title>
+    <link rel="shortcut icon" href="__PUBLIC__/Images/favicon.ico" type="image/x-icon"/>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://toruneko.sinaapp.com/assets/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="http://toruneko.sinaapp.com/assets/js/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		function sub(){
+		var title=document.myForm.title;
+		var type=document.myForm.type;
+		var content=document.myForm.content;
+		if(title.value==''|| type.value==''|| content.value == ''){
+			alert('不能为空');
+		}else{
+			document.myForm.submit();
+			alert(asfd);
+		}
+	}
+	</script>
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Toruneko</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="__URL__/index">Home</a></li>
+					<li><a href="__URL__/login">Login</a></li>
+					
+				</ul>
+				<form action="__PUBLIC__/search" class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" name="kw" class="form-control" placeholder="关键字" />
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+			</div>
+		</div>
+	</div>
+    <div class="container-fluid blog-container"><div class="row">
+	<div class="col-md-9 blog-container-list"><br><br>
+
+	<form action="__URL__/doAdd" method="POST" name="myForm">
+		标题：<input type="text" name="title"><br><br>
+		分类：<select name="type">
+		<?php if(is_array($types)): foreach($types as $key=>$t): ?><option value="<?php echo ($t["id"]); ?>,<?php echo ($t["typename"]); ?>" ><?php echo ($t["typename"]); ?></option><?php endforeach; endif; ?>          
+		     </select><br><br>
+		内容：<textarea rows="20" name="content" cols="40"></textarea><br><br>
+		<input type="button" value="提交" onclick="sub()" class="submit"><br><br><br><br>
+	</form>
+	<div class="container-fluid text-center">
+		&copy; 2014 - 2015		Toruneko. All rights reserved.
+		Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>.        
+		<a href="http://sae.sina.com.cn/">
+        	<img title="Sae App Engine" alt="Sae App Engine" width="117" height="12" src="http://sae.sina.com.cn/doc/_images/poweredby-117x12px.gif"/>
+	    </a>
+    </div>
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/blog.js"></script>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+		var offset = 20;
+
+		var current = window.location.href;
+		$('.nav li').each(function(){
+		    var href = $(this).find('a').attr('href');
+		    if(href == current){
+		        $('.nav li.active').removeClass('active');
+		        $(this).addClass('active');
+		    }else if(current.match('^'+href+'.*')){
+		        $('.nav li.active').removeClass('active');
+		        $(this).addClass('active');
+		    }
+		});
+
+
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?e259f8f91c0fa95b00c128e2cb9c9503";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+
+		/*]]>*/
+		</script>
+	</body>
+</html>

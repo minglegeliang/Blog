@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>verity</title>
+	<link rel='stylesheet' type='text/css' href='__CSS__/basic.css'>
+	<script type="text/javascript" src='__JS__/basic.js'>
+	/*
+		function sub(){
+		var ou=document.myForm.username;
+		var op=document.myForm.password;
+		var oc=document.myForm.code;
+		if(ou.value==''|| op.value==''|| oc.value == ''){
+			alert('用户名或密码或验证码不能为空');
+		}else{
+			document.myForm.submit();
+		}
+		}
+		*/
+	</script>
+</head>
+<body>
+	<form action='__URL__/do_login' method='post' name='myForm'>
+		账号：<input type="text" name="username"/><br>
+		密码：<input type="text" name="password"/><br>
+		验证码：<input type="text" name="code"/>
+				<img src="__APP__/Public/code" onclick="this.src=this.src+'?'+Math.random()"/>
+				<br>
+		<img src='__PUBLIC__/Images/login.gif' title='login' onclick='sub()' class='submit'/>
+	</form>
+</body>
+</html>

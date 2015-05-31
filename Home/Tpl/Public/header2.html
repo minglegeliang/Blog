@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<style type="text/css">
+	#daohang{
+		height: 100px;
+		background: #abcdef;
+	}
+	a{
+		border: 1px solid gray;
+		font-size: 80px;
+		text-decoration: none;
+	}
+	</style>
+</head>
+<body>
+	<div id="daohang">
+
+	<foreach name='list' item='p'>
+		<a href="__APP__/City/<{$p.name}>"><{$p.name}></a>
+	</foreach>	
+	</div>
